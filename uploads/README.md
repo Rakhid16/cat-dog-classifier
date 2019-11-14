@@ -1,1 +1,1 @@
-The image uploaded by the user will be stored here for classification.
+Gambar yang diunggah masuk ke dalam direktori ini
