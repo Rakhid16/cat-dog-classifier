@@ -11,3 +11,12 @@
 6. pillow
 7. h5py
 8. tensorflow
+
+Cara menggunakan :<br>
+1. <i>Clone</i> repositori ini
+2. Masuk ke dalam direktori repositori yang telah anda <i>clone</i>
+3. Buka terminal/cmd
+4. Ketikkan perintah :<br>
+```set FLASK_APP=app.py``` untuk windows | ```export FLASK_APP=app.py```<br>
+```flask run```<br>
+5. Akses ```localhost:5000/```
