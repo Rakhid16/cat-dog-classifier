@@ -16,9 +16,9 @@ app = Flask(__name__)
 # MUAT MODEL YANG TELAH ANTUM LATIH
 model = load_model("models/koceng_anjeng.h5")
 model._make_predict_function()
-print('Model loaded. Check http://127.0.0.1:5000/')
+print('MODEL LOADED!\nCheck http://localhost:5000/')
 
-# UNTUK MEMUAT/MEMBACA CITRA HASIL UNGGAHAN
+# FUNGSI UNTUK PRAPROSES CITRA HASIL UNGGAHAN
 def load_image(img_path, show=False):
     img = image.load_img(img_path, target_size=(224, 224))
     img_tensor = image.img_to_array(img)
@@ -32,25 +32,26 @@ def load_image(img_path, show=False):
 
     return img_tensor
 
+# UNTUK MEMUAT LAMAN UTAMA/MERENDER index.html
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
+# UNTUK MENAMPILKAN HASIL PREDIKSI
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         f = request.files['image']
         
         basepath = dirname(__file__)
-        file_path = join(
-            basepath, 'uploads', secure_filename(f.filename))
+        file_path = join(basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
 
         new_image = load_image(file_path)
         pred = model.predict(new_image)
-
-        result = str(pred[0])
-        return result
+        
+        # HARUS string LUR
+        return str(pred[0]) 
     
     return None
 
