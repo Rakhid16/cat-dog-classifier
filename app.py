@@ -16,7 +16,7 @@ app = Flask(__name__)
 # MUAT MODEL YANG TELAH ANTUM LATIH
 model = load_model("models/koceng_anjeng.h5")
 model._make_predict_function()
-print('MODEL LOADED!\nCheck http://localhost:5000/')
+print('Oke Siap!')
 
 # FUNGSI UNTUK PRAPROSES CITRA HASIL UNGGAHAN
 def load_image(img_path, show=False):
