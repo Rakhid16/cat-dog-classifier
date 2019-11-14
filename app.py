@@ -50,11 +50,14 @@ def upload():
         new_image = load_image(file_path)
         pred = model.predict(new_image)
         
-        # HARUS string LUR
-        return str(pred[0]) 
-    
+        if pred[0][0] > pred[0][1]:
+            return str("KOCHENG")
+        else:
+            return str("ANJENG")
+
     return None
 
+# JALANKAN SERVER'NYA
 if __name__ == '__main__':
     http_server = WSGIServer(('0.0.0.0', 5000), app)
     http_server.serve_forever()
