@@ -3,14 +3,14 @@
 </p>
                                                                                                                                
 <i>Libraries</i> yang kudu di-<i>install</i>:<br>
-1. Werkzeug
-2. Flask
-3. numpy
-4. Keras
-5. gevent
-6. pillow
-7. h5py
-8. tensorflow
+1. Werkzeug (0.16.0)
+2. Flask (1.1.1)
+3. numpy (1.14.5)
+4. Keras (2.2.4)
+5. gevent (1.4.0)
+6. pillow (5.1.0)
+7. h5py (2.9.0)
+8. tensorflow (pembuatan model dilakukan pada tensorflow-gpu versi 1.8.0)
 
 Cara menjalankan :
 1. <i>Clone</i> repositori ini
